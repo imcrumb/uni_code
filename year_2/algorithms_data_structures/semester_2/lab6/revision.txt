@@ -1,0 +1,14 @@
+What is the difference between an undirected graph and a directed graph?
+A directed graph is essentially the same as an undirected graph (in that they are composed
+of vertices related to one another by edges) except in a directed graph, the order of the
+vertices in the edge is significant.
+ 
+What is a DAG? 
+A DAG is a directed acyclic graph. Directed because the order of the vertices of an edge is
+significant; and acyclic because the graph contains no cycles.
+
+What is a topological sort of a DAG?
+A topological sort of a DAG is an ordered sequence of all vertices in the graph s.t. if two
+vertices x and y in the DAG have a directed edge (a,b), then x appears before y in the
+sequence
+

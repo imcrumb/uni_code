@@ -1,0 +1,50 @@
+revision
+
+i: 
+Vertex ADT:
+
+element() - returns the label of the vertex
+
+Edge ADT:
+
+vertices() - returns the pair of vertices the edge is incident on
+opposite(x) - if the edge is incident on x then return the other vertex
+element() - return the label of the edge
+
+Graph ADT:
+
+vertices() - return a list of all vertices
+edges() - returna list of all edges
+num_vertices() - return the number of vertices
+num_edges() - return the number of edges
+
+get_edge(x,y) - return the edge between x and y
+
+degree(x) - return the degree of vertex x
+get_edges(x) - return a list of all edges incident on x
+
+add_vertex(elt) - add a new vertex with element = elt
+add_edge(x,y,elt) - add a new edge with vertices x and y with element elt
+
+remove_vertex(x) - remove vertex with element x and all incident edges
+remove_edge(e) - remove edge with element e
+
+ii:
+
+An adjacency list imeplementation of the graph ADT may be prefereable to an edge list
+implementation, because: 
+
+in the edge list implementation, to access a particular edge
+we must potentially search each edge in the graph; get_edge is O(m) where m is the 
+size of the edge list. In a adjcency list, we must only search the edges incident
+on the vertex of the lowest degree. 
+
+Getting the degree is cheaper; in the edge list we must search each egde and check 
+if the edge is incident on the given vertex x. In the adjacency implementation the 
+degree of a vertex can be checked by simply taking the length of the vertex's edge
+list which is O(1)
+
+getting the egdes incident on a particular vertex (get_edges(x)) is also cheaper in
+the adjacency implementation as we need only return the list of edges that are 
+incident on a particular vertex x. If an edge list were used we would need to check
+each edge to check if its incident on our vertex

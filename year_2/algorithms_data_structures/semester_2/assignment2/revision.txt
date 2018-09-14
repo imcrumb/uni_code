@@ -1,0 +1,32 @@
+I Revision:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+i. Define the shortest path betweeen two vertices in a weighted graph
+a path from v0 to vk in a simple graph is a sequence of vertices <v0,v1,..,vk>
+s.t. (vi,vi+1) is an oriented edge in G
+the length of the path is the number of vertices - 1
+
+a weighted graph has a function w which maps each edge in the set of edges to some other set
+assigning each edge a weight
+
+w: E -> S
+
+If we have a path made of weighted edges where the weights are from some numerical set then
+we can define the cost of the path:
+
+sigma(i=0,k-1):w(vi,vi+1)
+
+the minimum cost path between two vertices defines the shortest path between them
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ii. What are the main steps in Dijkstra's algorithm?
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+iii. What is a APQ?
+A priority queue is a FIFO sequence in which each element has a priority key (int).
+The smaller the priority key the higher the priority of the element and the closer the 
+element will be to the front of the queue. The element with the minimum key is at the front
+of the queue. 
+
+An adaptable priority queue (APQ) is a priority queue with methods to allow
+an elements priority key to be changed on the fly (including support methods to rebalance
+the queue after alterations).

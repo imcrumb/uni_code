@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DnD(i) - Lab2</title>
+	<style type="text/css">
+		#box {
+			position: absolute;
+			background-color: blue;
+			left: 500px;
+			top: 250px;
+			width:100px;
+			height: 100px;
+		}
+	</style>
+	<script type="text/javascript">
+		function init(){
+			document.getElementById("box").addEventListener("mousedown",dragStart);
+		}
+		function dragStart(evnt) {
+			//var startX = parseInt(evnt.clientX);
+			//var startY = parseInt(evnt.clientY);
+			document.addEventListener("mousemove",drag);
+			document.addEventListener("mouseup",dragEnd);
+			return false;
+		}
+		function drag(evnt,startX,startY){
+			var x = parseInt(evnt.clientX);
+			var y = parseInt(evnt.clientY);
+			/*left = parseInt(window.getComputedStyle(document.getElementById("box")).getPropertyValue("left"));
+			top = parseInt(window.getComputedStyle(document.getElementById("box")).getPropertyValue("top"));
+			console.log(left);
+			console.log(top);*/
+			document.getElementById("box").innerHTML = "<p style='color:white;'> x:" + x + "<br>" + "y:" + y + "</p>";
+			document.getElementById("box").style.left = x + "px";
+			document.getElementById("box").style.top = y + "px";
+			return false;
+		}
+		function dragEnd(){
+			document.removeEventListener("mousemove",drag);
+			document.removeEventListener("mouseup",dragEnd);
+			return false;
+		}
+	</script>
+</head>
+<body onload="init()">
+	<div id="box"></div>
+</body>
+</html>

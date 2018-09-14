@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Web Interface Elements (i)</title>
+		<script type="text/javascript">
+			function processForm() {
+				var names = "Your name is : " + document.myForm.firstName.value + " " + document.myForm.lastName.value;
+				var message = "Your hobbies are: ";
+				var group = "Your age-group is: " + document.querySelector("input[name=ageGroup]:checked").value;
+				if (document.myForm.cinema.checked) {message += "cinema ";}
+				if (document.myForm.running.checked) {message += "running ";}
+				if (document.myForm.reading.checked) {message += "reading ";}				
+				alert(names + "\n" + message + "\n" + group);
+			}
+		</script>
+	</head>
+	<body>
+		<form name="myForm">
+			<section>
+				<label for="name1">First Name:</label>
+				<input type="text" name="firstName" id="name1" /><br>
+				<label for="name2">Surname:</label>
+				<input type="text" name="lastName" id="name2" /><br><br>
+			</section>
+			<label for="hobbies">Hobbies:</label>
+			<section id="hobbies">
+				<label for="hobby1">Cinema</label>
+				<input type="checkbox" name="cinema" id="hobby1"><br>
+				<label for="hobby2">Running</label>
+				<input type="checkbox" name="running" id="hobby2"><br>
+				<label for="hobby3">Reading</label>
+				<input type="checkbox" name="reading" id="hobby3"><br><br>
+			</section>
+			<label for="agegroup">Age Group:</label>
+			<section id="agegroup">
+				<label for="12-24">12-24</label>
+				<input type="radio" name="ageGroup" value="12-24"><br>
+				<label for="25-34">25-34</label>
+				<input type="radio" name="ageGroup" value="25-34"><br>
+				<label for="35-50">35-50</label>
+				<input type="radio" name="ageGroup" value="35-50"><br><br>
+			</section>
+		</form>
+		<input type="button" value="Test" onclick="processForm()"/>
+	</body>
+</html>

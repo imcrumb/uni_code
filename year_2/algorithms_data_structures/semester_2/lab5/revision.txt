@@ -1,0 +1,54 @@
+1.Revision
+
+~~DFS and BFS Definitions~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~DFS Definition~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Depth-First Search (DFS):
+
+psuedocode:
+
+dfsearch(graph,vertex):
+	mark v
+	for each edge (v,w):
+		if w has not been marked:
+			mark w
+			dfsearch(graph,w)
+
+
+properties:
+
+-the set of vertices marked in DFS is the connected component of G containing v
+-the set of marked vertices and the edges that led to them iin DFS form a rooted spanning
+tree of the connected component, rooted at v
+-the worst case time complexity of DFS is O(n+m) where n = #vertices and m = #edges
+
+~~BFS Definition~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Breadth-First Search (BFS):
+
+pseudocode:
+
+bfsearch(v):
+	while at current level:
+		for each vertex at this lvl:
+			for each edge of the vertex:
+				get the opposite edge
+				if the opposite edge in not in the search tree:
+					add it to search tree
+					add the opposite edge to next level
+		the current lvl becomes next level
+	return the search tree
+
+	
+properties:
+
+-BFS computes, for each vertex, the path with the fewest number of edges from the start vertex
+-BFS has worst-case time complexity of O(n+m)
+
+~~Questions~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+i. What is the difference between depth-first search and a breadth-first search on
+undirected simple graphs with no edge loops?
+
+
+
+
+

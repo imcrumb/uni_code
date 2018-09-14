@@ -1,0 +1,27 @@
+TCP/UDP Differences:
+
+-In Python Sockets:
+	-Socket Connection:
+		-TCP sockets establish and maintain a connection with a corresponding host socket
+		-UDP sockets do not establish direct connection with a host socket and instead send
+		each individually addressed datagram to the host
+	-Methods and Protocols:
+		-The SOCK_STREAM constant represents the TCP protocol when defining a socket
+		-A socket using the above protocol will use methods such as listen(),send(),recv() to exchange
+		data over a connection socket
+		-The SOCK_DGRAM constant describes the UDP protocol when declaring a socket
+		-A socket using the DGRAM protocol uses methods like sendto() and recvfrom() to exchange data
+		with a client using the AF_INET address format
+		-The DGRAM protocol does not use the listen() method, because no connection exists between
+		sender and receiver; just packets being routed to specified addresses
+
+-In General:
+	-TCP:
+		-TCP is a connection-oriented protocol and establishes an end-to-end connection between sender and receiver
+		-TCP allows for connection management using control messages exchanged between sender and receiver
+		-The above feature of TCP makes it a reliable transfer protocol built on an unreliable protocol, IP
+
+	-UDP:
+		-UDP, in contrast to TCP, does not establish a connnection between sender and receiver
+		-UDP is describes as a "best effort" service and segements may arrive out of sequence or may be lost entirely
+		-UDP tends to be faster and less reliable than TCP
